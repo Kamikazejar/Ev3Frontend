@@ -28,3 +28,20 @@ function mostrar() {
         });
     }, false);
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+    document.querySelectorAll('.navbar-nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.offsetTop - navbarHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
