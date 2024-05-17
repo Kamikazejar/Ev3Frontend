@@ -1,42 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 
-
+#seccionHistoria, #valoresEmp, #textService {
+  padding-top: 100px;
+}
 
 #Img1{
-    margin-inline-start: 20%;
+  margin-inline-start: 20%;
 }
-#text1{
-    font-size: 25px;
-    font-style: oblique;
-}
-h2 {
-    font-style: oblique;
-}
-#container1{
 
-    padding-top: 3%;
+#text1{
+  font-size: 25px;
+  font-style: oblique;
+}
+
+h2 {
+  font-style: oblique;
+}
+
+#container1{
+  padding-top: 3%;
 }
 
 #refran1{
-    padding-top: 1.5%;
-}
-#seccionhistoria{
-    padding-top: 3%;
-}
-#imghistoria{
-    padding-top:1%;
-    padding-left: 5%;
-}
-#textfaq{
-    padding-left: 5%;
-}
-#faqcontent{
-    padding-left: 3%;
+  padding-top: 1.5%;
 }
 
-.card-header {
-    text-align: center;
+#seccionhistoria{
+  padding-top: 3%;
 }
+
+#imghistoria{
+  padding-top:1%;
+  padding-left: 5%;
+}
+
+
+#textfaq{
+  padding-left: 5%;
+}
+
+#faqcontent{
+  padding-left: 3%;
+}
+
 
 .faq-header{
   font-size: 25px;
@@ -44,6 +50,7 @@ h2 {
   font-style: oblique;
   border-bottom: 1px dotted #ccc;
   padding: 24px;
+  max-width: 1320px;
 }
 
 .faq-content {
