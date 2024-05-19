@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 
+.logo {
+  background-color: transparent; /* Default background */
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+      background-color: white; /* White background in dark mode */
+  }
+}
+
 .carousel-item {
   max-height: 35em;
-}
+} 
 
 #Img1{
   margin-inline-start: 20%;
 }
 
-#text1{
+.text1{
   font-size: 25px;
   font-style: oblique;
 }
@@ -34,6 +44,9 @@ h2 {
   padding-left: 5%;
 }
 
+#enviarForm, #buttonEquipo  {
+  background-color: #d74a1c;
+}
 
 #textfaq{
   padding-left: 5%;
@@ -42,7 +55,6 @@ h2 {
 #faqcontent{
   padding-left: 3%;
 }
-
 
 .faq-header{
   font-size: 25px;

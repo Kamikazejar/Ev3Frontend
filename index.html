@@ -7,6 +7,7 @@
     <title>Energy And Water SPA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="./assets/css/styles.css" rel="stylesheet">
 </head>
 
@@ -15,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets\img\logoclean.webp" alt="Logo de la empresa Energy and Water" width="100px" height="100px">
+                <img src="assets/img/logoclean.webp" alt="Logo de la empresa Energy and Water" width="100px" height="100px" class="logo">
             </a>
 
             <div class="container-fluid">
@@ -33,6 +34,10 @@
                         <a class="nav-link" href="#valoresEmp">Equipo</a>
                         <a class="nav-link" href="#formulario">Contáctanos</a>
                         <a class="nav-link" href="#seccionFAQs">Preguntas frecuentes</a>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="darkModeSwitch" checked>
+                            <label class="form-check-label" for="darkModeSwitch">Modo claro/oscuro</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,18 +52,13 @@
                   aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                   aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="assets/img/banner.webp" class="d-block w-100 img-fluid" alt="Renovacion de un establecimiento">
+            <img src="assets/img/banner.webp" class="d-block w-100 h-100 img-fluid" alt="Renovacion de un establecimiento">
           </div>
           <div class="carousel-item">
             <img src="assets/img/reparacionmatriz1600.webp" class="d-block w-100 img-fluid" alt="Reparación matriz">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/photo-collage1600.webp" class="d-block w-100 img-fluid" alt="Photo collage">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -77,15 +77,14 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Historia</h2>
-                    <br>
-                    <h3 id="text1">Creando ambientes gratos y confortables a través del mantenimiento</h3>
+                    <h2 class="mb-4">Historia</h2>
+                    <h3 class="text1">Creando ambientes gratos y confortables a través del mantenimiento</h3>
                     <p> Bienvenido a Energy and Water SpA, empresa dedicada a la instalación y reparación de sistemas de
                         ventilación, calefacción, electricidad y construcción. Contamos con un equipo de profesionales
                         altamente cualificados y con amplia experiencia en el sector. Ofrecemos soluciones a medida para
                         cada cliente, garantizando la calidad y la seguridad de nuestros servicios. Contacta con
                         nosotros y solicita tu presupuesto sin compromiso. </p>
-                    <h3 id="text1">En qué punto nos encontramos</h3>
+                    <h3 class="text1">En qué punto nos encontramos</h3>
                     <p>Somos una empresa fundada en 2018 con el objetivo de brindar servicios integrales de
                         mantenimiento para hogares, oficinas, comercios e industrias. Nuestra misión es satisfacer las
                         necesidades de nuestros clientes con eficiencia, rapidez y profesionalidad. Nuestra visión es
@@ -106,18 +105,21 @@
     <!--Sección Servicios-->
     <section id="seccionServicios">
         <div class="container mt-3">
-            <h2 id="textService">Servicios</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 id="textService" class="mb-4">Servicios</h2>
+                </div>
+            </div>
             <div class="row row-cols-1 row-cols-md-4 g-4">
 
                 <!--Card Aire acondiconado-->
                 <div class="col" id="aireAcondicionado">
                     <div class="card">
-                        <img src="assets\img\aire-acondicionado.webp" class="card-img-top" alt="...">
+                        <img src="assets\img\aire-acondicionado.webp" class="card-img-top" alt="Imagen de equipo industrial de aire acondicionado">
                         <div class="card-body">
                             <h5 class="card-title text-center">Aire acondicionado</h5>
-                            <p class="card-text text-center">Instalamos, reparamos y revisamos todo tipo de sistemas de aire acondicionado, tanto domésticos como
-                                industriales. Nos encargamos de la limpieza, el cambio de filtros, la recarga de gas y la
-                                detección y solución de averías.</p>
+                            <p class="card-text text-center">Instalamos, reparamos y revisamos todo tipo de sistemas de aire acondicionado, tanto domésticos como industriales. Nos encargamos de la limpieza, el cambio de filtros, la recarga de gas y la
+                            detección y solución de averías.</p>
                         </div>
                     </div>
                 </div>
@@ -125,7 +127,7 @@
                 <!--Card Sala de calderas-->
                 <div class="col" id="salaCalderas">
                   <div class="card">
-                    <img src="assets\img\calderas.webp" class="card-img-top" alt="...">
+                    <img src="assets\img\calderas.webp" class="card-img-top" alt="Imagen de equipo industrial de sala de calderas">
                     <div class="card-body">
                       <h5 class="card-title text-center">Sala de calderas</h5>
                       <p class="card-text text-center">Instalamos, reparamos y revisamos todo tipo de calderas, tanto de gas como eléctricas. Nos encargamos del mantenimiento preventivo, la sustitución de piezas, la purga de radiadores y la regulación de la presión y la temperatura.</p>
@@ -136,7 +138,7 @@
                 <!--Card Grupo electrógeno-->
                 <div class="col" id="grupoElectrogeno">
                   <div class="card">
-                    <img src="assets\img\grupoelectrogeno.webp" class="card-img-top" alt="...">
+                    <img src="assets\img\grupoelectrogeno.webp" class="card-img-top" alt="Imagen de equipo industrial de grupo electrógeno">
                     <div class="card-body">
                       <h5 class="card-title text-center">Grupo electrógeno</h5>
                       <p class="card-text text-center">Instalamos, reparamos y revisamos todo tipo de grupos electrógenos, tanto monofásicos como trifásicos. Nos encargamos del suministro de combustible, el cambio de aceite, el control de baterías y la verificación del funcionamiento correcto.</p>
@@ -147,7 +149,7 @@
                 <!--Card Sala de bombas-->
                 <div class="col" id="salaBombas">
                   <div class="card">
-                    <img src="assets\img\salabombas.webp" class="card-img-top" alt="...">
+                    <img src="assets\img\salabombas.webp" class="card-img-top" alt="Equipo industrial de sala de bombas">
                     <div class="card-body">
                       <h5 class="card-title text-center">Sala de bombas</h5>
                       <p class="card-text text-center">Instalamos, reparamos y revisamos todo tipo de bombas hidráulicas, tanto centrífugas como periféricas. Nos encargamos del ajuste de válvulas, el cambio de sellos mecánicos, el equilibrado de rotores y la limpieza de impulsores.</p>
@@ -163,61 +165,56 @@
 
     <!--Sección Equipo y valores-->
     <section id="equipo">
-        <div class="container">
+        <div class="container mt-3">
+            <h2 id="valoresEmp" class="mb-4">Nuestros Valores</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <br>
-                    <h2 id="valoresEmp">Nuestros Valores</h2>
-                    <br>
                     <p> Compartimos una visión clara del objetivo, fomentamos un clima de confianza, colaboración y apoyo mutuo entre los integrantes del equipo.</p>
                 </div>
                 <div class="col-md-6">
-                    <img id= "elServicio" src="assets\img\el-servicio-nos-mueve.webp" class="img-fluid"
-                        alt="El Servicio nos Mueve" id="Img1" width="95%" height="95%">
+                    <img id= "elServicio" src="assets\img\el-servicio-nos-mueve.webp" class="img-fluid mb-3"
+                        alt="El Servicio nos Mueve" id="Img1" width="85%" alt="Imagen de mano de robot y mano humana saludándose.">
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <div class="container" id="seccionEquipo">
-            <div class="row">
-                <div class="col-6">
-                <h2>Este es nuestro equipo</h2> 
-            <br> 
+        <div class="container mt-3" id="seccionEquipo">
+            <h2>Este es nuestro equipo</h2>
+            <div class="row row row-cols-1 row-cols-md-1">
+                <div class="col">
+                <br>
                 <p>En <strong>Energy And Water Spa</strong> nos dedicamos a crear ambientes gratos y confortables a través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos y electricidad, entre otros. Los miembros de nuestro equipo son:</p>
-            </div>  
-
-                <div class="col-3">
-                    <div class="card" style="width: 95%;">
-                        <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Mizraim Abello Avello" id="fotoMiembros">
-                        <div class="card-body">
-                        <p class="card-text">Mizraim Abello Avello</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" style="width: 95%;">
-                        <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Marcelo Fuentes Orellana" id="fotoMiembros">
-                        <div class="card-body">
-                        <p class="card-text">Marcelo Fuentes Orellan</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
 
         <div class="container">
+            <div class="row g-4 justify-content-md-center">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Imagen de Mizraim Abello Avello" id="fotoMiembrosMizraim">
+                        <div class="card-body">
+                            <p class="card-text">Mizraim Abello Avello</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Imagen de Marcelo Fuentes Orellana" id="fotoMiembrosMarcelo">
+                        <div class="card-body">
+                            <p class="card-text">Marcelo Fuentes Orellana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <br>
+        <br>
+
+        <div class="container mt-3">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <h2 style="text-align: left;">Liderazgo</h2>
                     <br>
                     <p><strong>Mizraim Abello</strong> es el fundador de Energy and Water Spa, es un líder colaborativo que se desempeña 
@@ -225,18 +222,10 @@
                         <button type="button" onclick="mostrar()" id="leerMas">Leer más</button> 
                     </p>
                     <div id="masTexto" style="display: none">
-                        Es decir, involucra al equipo de trabajo en la toma de decisiones y valora sus opiniones y sugerencias. Sus principales habilidades como líder son la resolución de problemas, la comunicación efectiva, el pensamiento crítico, 
-                        la capacidad de coordinación y gestión. Algunos de los logros más destacados son haber participado en la acreditación 
-                        de los centros de salud de la municipalidad de San Joaquín, reparación del equipo de climatización para el museo 
-                        de la Universidad de los Andes y haber realizado reparaciones y cambios de grupos electrógenos que son críticos para el 
-                        funcionamiento de los edificios. Uno de los desafíos que enfrentó como líder fue adaptarse a las nuevas normativas sanitarias
-                        por la pandemia y garantizar la seguridad del equipo y los clientes. Lo logró implementando protocolos de prevención y 
-                        capacitando al personal. Su objetivo como líder es darles continuidad operacional a los clientes y mejorar constantemente 
-                        los procesos de mantenimiento y calidad.
+                        Es decir, involucra al equipo de trabajo en la toma de decisiones y valora sus opiniones y sugerencias. Sus principales habilidades como líder son la resolución de problemas, la comunicación efectiva, el pensamiento crítico, la capacidad de coordinación y gestión. Algunos de los logros más destacados son haber participado en la acreditación de los centros de salud de la municipalidad de San Joaquín, reparación del equipo de climatización para el museo de la Universidad de los Andes y haber realizado reparaciones y cambios de grupos electrógenos que son críticos para el funcionamiento de los edificios. Uno de los desafíos que enfrentó como líder fue adaptarse a las nuevas normativas sanitarias por la pandemia y garantizar la seguridad del equipo y los clientes. Lo logró implementando protocolos de prevención y capacitando al personal. Su objetivo como líder es darles continuidad operacional a los clientes y mejorar constantemente los procesos de mantenimiento y calidad.
                     </div>                
                 </div>
-
-                <div class="col-6">
+                <div class="col-md-6">
                 <img id= "mantEdificios" class="thumbnail" src="assets\img\mantenimiento-para-edificios.webp" alt="Mantenimiento para Edificios" width="95%">
                 </div>
             </div>
@@ -259,7 +248,7 @@
             <div class="container">
                 <div class="row justify-content-md-center">        
                     <div class="col-12" style="text-align: center;"> 
-                        <button type="button" class="btn btn-primary">Enviar Solicitud</button>
+                        <button type="button" id="buttonEquipo" class="btn btn-primary">Enviar Solicitud</button>
                     </div>           
                 </div>
             </div>  
@@ -276,33 +265,33 @@
         <div class="container">
             <div class="d-flex justify-content-center">
                 <div class="col-md-8">
-                    <h2 class="text-center mb-4">Contáctanos</h2>
+                    <h2 class="text-center mb-5">Contáctanos</h2>
                     <div class="row mb-2">
                         <div class="col">
                             <label for="nombreCompleto" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombreCompleto">
+                            <input type="text" class="form-control" id="nombreCompleto" required>
                         </div>
-    
+
                         <div class="col">
                             <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <input type="email" class="form-control" id="inputEmail4" required>
                         </div>
                     </div>
-    
+
                     <div class="row mb-6">
                         <div class="col-md-6">
                             <label for="direccion" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="direccion">
+                            <input type="text" class="form-control" id="direccion" required>
                         </div>
-    
+
                         <div class="col-md-4">
                             <label for="casaDepartamento" class="form-label">Casa, Departamento</label>
-                            <input type="text" class="form-control" id="casaDepartamento">
+                            <input type="text" class="form-control" id="casaDepartamento" required>
                         </div>
 
                         <div class="col-md-2">
                             <label for="numero" class="form-label">Número</label>
-                            <input type="text" class="form-control" id="numero">
+                            <input type="text" class="form-control" id="numero" required>
                         </div>
                     </div>
 
@@ -319,23 +308,26 @@
                             <br>
                         </div>
                     </div>
-    
+
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
                         <label for="floatingTextarea2">Comentarios adicionales</label>
                     </div>
-    
+
                     <div class="d-flex justify-content-center mt-4">
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Acepto que he leído los términos de uso y condición</label>
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" value="1" required>
+                            <label class="form-check-label" for="exampleCheck1">Acepto que he leído los términos de uso
+                                y condición</label>
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center mt-2">
-                        <button id="enviarForm" class="btn btn-primary">Enviar</button>
+                        <button id="enviarForm" class="btn btn-primary" onclick=mostrarformulario() >Enviar</button>
                     </div>
-    
+              
+
                 </div>
             </div>
         </div>
@@ -363,8 +355,8 @@
                     <div class="plus">+</div>
                     <label for="q2" class="panel-title">¿Necesitas visita técnica?</label>
                     <div class="panel-content">Puedes solicitar visita técnica para evaluación mediante correo
-                        electrónico&nbsp; <a href="mailto:Contacto@energyandwater.cl"
-                            target="_blank">Contacto@energyandwater.cl</a> o al número
+                        electrónico&nbsp; <a href="mailto:contacto@energyandwater.cl"
+                            target="_blank">contacto@energyandwater.cl</a> o al número
                         <a href="https://wa.me/56232569798" target="_blank">+56232569798</a>.
                     </div>
                 </div>
@@ -382,7 +374,7 @@
     <!--Sección FAQs-->
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted pt-1">
   
     <!-- Columna empresa  -->
     <section>
@@ -425,7 +417,7 @@
 
             <p>
             <i class="fas fa-envelope"></i>
-            contacto@energyandwater.cl
+            <a href="mailto:contacto@energyandwater.cl" target="_blank">contacto@energyandwater.cl</a>
             </p>
             <p>
                 <i class="fas fa-phone"></i>+ 56 2 32569798

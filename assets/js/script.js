@@ -1,3 +1,51 @@
+// Extrae los input. Si no están vacios y se aceptaron los terminos, se muestra en consola los datos.
+function mostrarformulario() {
+
+
+
+    let inputnombre = document.getElementById("nombreCompleto").value;
+    let inputemail = document.getElementById("inputEmail4").value;
+    let inputdireccion = document.getElementById("direccion").value;
+    let inputcasadepa = document.getElementById("casaDepartamento").value;
+    let inputnumero = document.getElementById("numero").value;
+    let servicio = document.getElementById("servicios").value;
+    let comentario = document.getElementById("floatingTextarea2").value;
+    const checkterminos = document.getElementById('exampleCheck1');
+
+
+    if (inputnombre == "") {
+
+    } else if (inputemail == " ") {
+
+    } else if (inputdireccion == "") {
+
+    } else if (inputcasadepa == "") {
+
+    } else if (inputnumero == "") {
+
+
+    } else if (servicio == "") {
+
+
+    } else if (checkterminos.checked) {
+        Swal.fire({
+            title: "Éxito!",
+            text: "Formulario enviado exitosamente!",
+            icon: "success"
+          });
+
+        var datosformulario = inputnombre + "\n" + inputemail + "\n" + inputdireccion + "\n" + inputcasadepa + "\n" + inputnumero + "\n" + servicio + "\n" + comentario;
+        console.log(datosformulario);
+
+    
+    }
+}
+ // Esto es para evitar que, cuando se ponga el boton enviar, se reinicie la pagina, ya que el form hace submit por default y actualiza pag
+formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+
+
 const masTexto = document.getElementById("masTexto");
 const leerMas = document.getElementsByClassName("btn");
 const enviarForm = document.getElementById("enviarForm");
@@ -29,6 +77,7 @@ function mostrar() {
     }, false);
 })();
 
+/*Listener to avoid overlap when clicking on links on navbar. Avoids navbar overlapping content/title*/
 document.addEventListener("DOMContentLoaded", function () {
     const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
@@ -43,5 +92,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         });
+    });
+});
+
+/*Listener for dark mode toggle*/
+document.addEventListener('DOMContentLoaded', (event) => {
+    const htmlElement = document.documentElement;
+    const switchElement = document.getElementById('darkModeSwitch');
+    const currentTheme = localStorage.getItem('bsTheme') || 'light';
+    htmlElement.setAttribute('data-bs-theme', currentTheme);
+    switchElement.checked = currentTheme === 'dark';
+
+    switchElement.addEventListener('change', function () {
+        if (this.checked) {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            localStorage.setItem('bsTheme', 'dark');
+        } else {
+            htmlElement.setAttribute('data-bs-theme', 'light');
+            localStorage.setItem('bsTheme', 'light');
+        }
     });
 });
