@@ -44,6 +44,10 @@ h2 {
   padding-left: 5%;
 }
 
+.card-img-top {
+  max-height: 500px;
+}
+
 #enviarForm, #buttonEquipo  {
   background-color: #d74a1c;
 }
