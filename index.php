@@ -458,8 +458,8 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                             <select id="servicios" class="form-select needs-validation" required novalidate>
                                 <option value="">Seleccione un servicio</option>
                                 <option value="1">Aire Acondicionado</option>
-                                <option value="2">Sala de calderas</option>
-                                <option value="3">Grupo Electrógeno</option>
+                                <option value="2">Grupo Electrógeno</option>
+                                <option value="3">Sala de calderas</option>
                                 <option value="4">Sala de bombas</option>
                             </select>
                             <div class="invalid-feedback">Por favor, seleccione un servicio.</div>
@@ -555,10 +555,10 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                             <a href="#aireAcondicionado" class="text-reset">Aire acondicionado</a>
                         </p>
                         <p>
-                            <a href="#salaCalderas" class="text-reset">Sala de calderas</a>
+                            <a href="#grupoElectrogeno" class="text-reset">Grupo electrógeno</a>
                         </p>
                         <p>
-                            <a href="#grupoElectrogeno" class="text-reset">Grupo electrógeno</a>
+                            <a href="#salaCalderas" class="text-reset">Sala de calderas</a>
                         </p>
                         <p>
                             <a href="#salaBombas" class="text-reset">Sala de bombas</a>
@@ -641,7 +641,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                     tarjetaFooter.classList.add('text-center');
                     tarjetaTitle.innerText = element.nombre;
                     tarjetaText.innerText = element.texto;
-                    tarjetaFooter.innerHTML = '<a href="#contacto"><button class= "btn btn-primary" onclick="cambiaServicio(`' + element.id + '`)">Contáctanos</button></a>';
+                    tarjetaFooter.innerHTML = '<a href="#contacto"><button class= "btn btn-primary" onclick="cambiarServicio(`' + element.id + '`)">Contáctanos</button></a>';
                     tarjeta.appendChild(tarjetaImagen);
                     tarjetaBody.appendChild(tarjetaTitle);
                     tarjetaBody.appendChild(tarjetaText);
@@ -649,6 +649,25 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                     tarjetaBody.appendChild(tarjetaFooter);
                     columna.appendChild(tarjeta);
                     rowServices.appendChild(columna);
+                }
+            });
+        }
+
+        function cambiarServicio(serviceId) {
+            // Scroll to the form section
+            document.querySelector("#formulario").scrollIntoView({ behavior: "smooth" });
+
+            // Find all option elements inside the select element
+            const options = document.querySelectorAll("#formulario option");
+
+            // Iterate over the options
+            options.forEach(option => {
+                // If the option value matches the serviceId, set it as selected
+                if (option.value === serviceId) {
+                    option.selected = true;
+                } else {
+                    // Otherwise, make sure it's not selected
+                    option.selected = false;
                 }
             });
         }
