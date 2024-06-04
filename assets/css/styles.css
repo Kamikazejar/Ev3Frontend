@@ -128,6 +128,11 @@ h2 {
   height: 80px;
 }
 
+.carousel-control-next .carousel-control-next-icon, .carousel-control-prev-icon {
+  background-color: #d74a1c;
+  border-radius: 30px;
+}
+
 .card-img-top {
   max-height: 500px;
 }
