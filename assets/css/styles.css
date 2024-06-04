@@ -48,6 +48,10 @@ h2 {
   max-height: 500px;
 }
 
+.card-footer button {
+  background-color: #d74a1c;
+}
+
 #enviarForm, #buttonEquipo  {
   background-color: #d74a1c;
 }
