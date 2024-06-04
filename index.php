@@ -136,7 +136,48 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
     <section id="seccionServicios">
         <div class="container mt-3">
             <h2 id="textService" class="mb-4">Servicios</h2>
-            <div class="container mt-3">
+
+            <div id="carouselMantenimiento" class="carousel slide text-center  p-5 mb-2">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselMantenimiento" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselMantenimiento" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselMantenimiento" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h3 class="text1">Mantenimiento</h3>
+                        <p> Conjunto de operaciones y cuidados necesarios para que tus instalaciones continúen
+                            funcionando
+                            correctamente. </p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3 class="text1">Mantenimiento preventivo</h3>
+                        <p>Ayuda a prolongar la vida útil de tus activos y aumenta la productividad, a través de una
+                            revisión.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3 class="text1">Mantenimiento correctivo</h3>
+                        <p>Corrige problemas o daños en las instalaciones o equipos.</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMantenimiento"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMantenimiento"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+
+            <!-- <div class="container mt-3">
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="mb-4 text1">Mantenimiento</h3>
@@ -150,7 +191,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                         <p>Corrige problemas o daños en las instalaciones o equipos.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <div class="row row-cols-1 row-cols-md-4 g-4"> -->
             <div class="row" id="rowServices">
@@ -340,29 +381,36 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                             <div class="img-box">
                                 <img src="./assets/img/customer1.jpg" alt="Avatar de cliente">
                             </div>
-                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima omnis laudantium maxime amet eius saepe ducimus enim sequi maiores quae.</p>
+                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima omnis
+                                laudantium maxime amet eius saepe ducimus enim sequi maiores quae.</p>
                             <p class="testimonialAuthor"><b>Fernando Fernández</b>, Hotel Sheratton</p>
                         </div>
                         <div class="item carousel-item testimonialItem">
                             <div class="img-box">
                                 <img src="./assets/img/customer2.jpg" alt="Avatar de cliente">
                             </div>
-                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus praesentium nam accusamus adipisci, aspernatur amet.</p>
+                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Necessitatibus praesentium nam accusamus adipisci, aspernatur amet.</p>
                             <p class="testimonialAuthor"><b>Gonzalo González</b>, dueño de constructora</p>
                         </div>
                         <div class="item carousel-item testimonialItem">
                             <div class="img-box">
                                 <img src="./assets/img/customer3.jpg" alt="Avatar de cliente">
                             </div>
-                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptates aspernatur voluptas animi similique voluptatibus soluta. Commodi dignissimos nisi atque delectus porro ipsum necessitatibus dolores! Consequatur veniam tenetur ex debitis?</p>
+                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                                voluptates aspernatur voluptas animi similique voluptatibus soluta. Commodi dignissimos
+                                nisi atque delectus porro ipsum necessitatibus dolores! Consequatur veniam tenetur ex
+                                debitis?</p>
                             <p class="testimonialAuthor"><b>Juan Jara</b>, arquitecto</p>
                         </div>
                     </div>
                     <!--Controles del carrusel-->
-                    <a class="carousel-control left carousel-control-prev" href="#testimonialCarousel" data-bs-slide="prev">
+                    <a class="carousel-control left carousel-control-prev pe-4" href="#testimonialCarousel"
+                        data-bs-slide="prev">
                         <img src="./assets/img/prev-1.svg">
                     </a>
-                    <a class="carousel-control right carousel-control-next" href="#testimonialCarousel" data-bs-slide="next">
+                    <a class="carousel-control right carousel-control-next ps-4" href="#testimonialCarousel"
+                        data-bs-slide="next">
                         <img src="assets/img/next-14.svg">
                     </a>
                 </div>
