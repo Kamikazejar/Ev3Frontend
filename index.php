@@ -329,6 +329,47 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
     <br>
     <br>
 
+    <!--Carrusel testimonios-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-center m-auto">
+                <h2 id="testimonialTitle">¿Qué dicen nuestros clientes?</h2>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active testimonialItem">
+                            <div class="img-box">
+                                <img src="./assets/img/customer1.jpg" alt="Avatar de cliente">
+                            </div>
+                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima omnis laudantium maxime amet eius saepe ducimus enim sequi maiores quae.</p>
+                            <p class="testimonialAuthor"><b>Fernando Fernández</b>, Hotel Sheratton</p>
+                        </div>
+                        <div class="item carousel-item testimonialItem">
+                            <div class="img-box">
+                                <img src="./assets/img/customer2.jpg" alt="Avatar de cliente">
+                            </div>
+                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus praesentium nam accusamus adipisci, aspernatur amet.</p>
+                            <p class="testimonialAuthor"><b>Gonzalo González</b>, dueño de constructora</p>
+                        </div>
+                        <div class="item carousel-item testimonialItem">
+                            <div class="img-box">
+                                <img src="./assets/img/customer3.jpg" alt="Avatar de cliente">
+                            </div>
+                            <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptates aspernatur voluptas animi similique voluptatibus soluta. Commodi dignissimos nisi atque delectus porro ipsum necessitatibus dolores! Consequatur veniam tenetur ex debitis?</p>
+                            <p class="testimonialAuthor"><b>Juan Jara</b>, arquitecto</p>
+                        </div>
+                    </div>
+                    <!--Controles del carrusel-->
+                    <a class="carousel-control left carousel-control-prev" href="#testimonialCarousel" data-bs-slide="prev">
+                        <img src="./assets/img/prev-1.svg">
+                    </a>
+                    <a class="carousel-control right carousel-control-next" href="#testimonialCarousel" data-bs-slide="next">
+                        <img src="assets/img/next-14.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Formulario-->
     <form id="formulario">
         <div class="container">
