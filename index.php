@@ -3,9 +3,12 @@
 function getEndpointByToken($_endpoint, $_token)
 {
     $ch = curl_init($_endpoint);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $_token
-    )
+    curl_setopt(
+        $ch,
+        CURLOPT_HTTPHEADER,
+        array(
+            'Authorization: Bearer ' . $_token
+        )
     );
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $respuesta = curl_exec($ch);
@@ -30,7 +33,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href="./assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -531,11 +534,11 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                     columna.classList.add('col-xl-' + anchoColumnasXL);
                     columna.classList.add('col-md-' + anchoColumnasMD);
                     columna.classList.add('col-sm-' + anchoColumnasSM);
-                    columna.classList.add('my-2');
+                    /* columna.classList.add('my-2'); */
                     const tarjeta = document.createElement('div');
                     tarjeta.classList.add('card');//dentro de card, va img y div card-body
-                    tarjeta.classList.add('h-100');
                     const tarjetaBody = document.createElement('div');
+                    tarjetaBody.classList.add('card-body');
                     const tarjetaTitle = document.createElement('h5');
                     tarjetaTitle.classList.add('card-title');
                     tarjetaTitle.classList.add('text-center');
@@ -543,25 +546,19 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                     tarjetaImagen.src = element.imagen;
                     tarjetaImagen.classList.add('card-img-top');
                     const tarjetaText = document.createElement('p');
-                    tarjetaText.classList.add('card-text');
                     tarjetaText.classList.add('text-center');
                     const tarjetaFooter = document.createElement('div');
                     tarjetaFooter.classList.add('card-footer');
                     tarjetaTitle.innerText = element.nombre;
                     tarjetaText.innerText = element.texto;
                     tarjetaFooter.innerHTML = '<a href="#contacto"><button onclick="cambiaServicio(`' + element.id + '`)">Contáctanos</button></a>';
-                    tarjetaBody.appendChild(tarjetaTitle);
                     tarjeta.appendChild(tarjetaImagen);
-                    tarjeta.appendChild(tarjetaBody);
+                    tarjetaBody.appendChild(tarjetaTitle);
                     tarjetaBody.appendChild(tarjetaText);
-                    tarjeta.appendChild(tarjetaFooter);
+                    tarjeta.appendChild(tarjetaBody);
+                    tarjetaBody.appendChild(tarjetaFooter);
                     columna.appendChild(tarjeta);
                     rowServices.appendChild(columna);
-                    /* tarjeta.appendChild(tarjetaImagen);
-                    tarjeta.appendChild(tarjetaText);
-                    tarjeta.appendChild(tarjetaFooter);
-                    columna.appendChild(tarjeta); */
-                    
                 }
             });
         }
