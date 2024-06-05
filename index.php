@@ -19,8 +19,8 @@ function getEndpointByToken($_endpoint, $_token)
     }
 }
 
-$respuestaEndpointServicios = getEndpointByToken('http://localhost/energy-and-water-t1/v1/categoria_servicio/', 'ciisa-get');
-$respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
+$respuestaEndpointEquipo = getEndpointByToken('http://localhost/energy-and-water-t1/v1/equipo/', 'ciisa-get');
+$respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,12 +41,12 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logoclean.webp" alt="Logo de la empresa Energy and Water" width="100px"
+                <img src="assets/img/logo.webp" alt="Logo de la empresa Energy and Water" width="100px"
                     height="100px" class="logo">
+                <img src="assets/img/titulo.webp"></a>
             </a>
 
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Energy and Water Spa</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -60,6 +60,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                         <a class="nav-link" href="#valoresEmp">Equipo</a>
                         <a class="nav-link" href="#formulario">Contáctanos</a>
                         <a class="nav-link" href="#seccionFAQs">Preguntas frecuentes</a>
+                        <a></a>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="darkModeSwitch" checked>
                             <label class="form-check-label" for="darkModeSwitch">Modo claro/oscuro</label>
@@ -256,34 +257,16 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
     <!--Sección Equipo y valores-->
     <section id="equipo">
         <div class="container mt-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <br>
-                    <h2 id="valoresEmp">Nuestros Valores</h2>
-                    <p> Compartimos una visión clara del objetivo, fomentamos un clima de confianza, colaboración y
-                        apoyo mutuo entre los integrantes del equipo.</p>
-                </div>
-                <div class="col-md-6">
-                    <img id="elServicio" src="assets\img\el-servicio-nos-mueve.webp" class="img-fluid"
-                        alt="El Servicio nos Mueve" id="Img1" width="85%">
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="container mt-3" id="seccionEquipo">
-            <div class="row">
+            <div class="row" id="seccionEquipo">
                 <div class="col-6">
-                    <h2>Este es nuestro equipo</h2>
+                    <h2 id="equipoTitulo">Nuestro equipo</h2>
                     <br>
-                    <p>En <strong>Energy And Water Spa</strong> nos dedicamos a crear ambientes gratos y confortables a
+                    <p id="equipoTexto">En <strong>Energy And Water Spa</strong> nos dedicamos a crear ambientes gratos y confortables a
                         través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos
                         y electricidad, entre otros. Los miembros de nuestro equipo son:</p>
                 </div>
-
-                <div class="card-group" style="width: 45%;">
+                <div class="col-6">
+                <div class="card-group" style="width: 90%;">
                     <div class="card" style="margin-right: 3%;">
                         <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Mizraim Abello Avello"
                             id="fotoMiembros">
@@ -299,14 +282,26 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                         </div>
                     </div>
                 </div>
-
+                </div>
+            </div>
+            <div class="container mt-3">
+            <div class="row" id="seccionValores">
+                <div class="col-6">
+                    <br>
+                    <h2 id="valoresEmp">Nuestros Valores</h2>
+                    <p> Compartimos una visión clara del objetivo, fomentamos un clima de confianza, colaboración y
+                        apoyo mutuo entre los integrantes del equipo.</p>
+                </div>
+                <div class="col-6">
+                    <img id="elServicio" src="assets\img\el-servicio-nos-mueve.webp" class="img-fluid"
+                        alt="El Servicio nos Mueve" id="Img1" width="90%">
+                </div>
             </div>
         </div>
         <br>
-        <br>
         <div class="container mt-3">
-            <div class="row">
-                <div class="col-md-6">
+        <div class="row" id="seccionLiderazgo">
+                <div class="col-6">
                     <h2 style="text-align: left;">Liderazgo</h2>
                     <br>
                     <p><strong>Mizraim Abello</strong> es el fundador de Energy and Water Spa, es un líder colaborativo
@@ -336,13 +331,11 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                 </div>
                 <div class="col-md-6">
                     <img id="mantEdificios" class="thumbnail" src="assets\img\mantenimiento-para-edificios.webp"
-                        alt="Mantenimiento para Edificios" width="95%">
+                        alt="Mantenimiento para Edificios" width="90%">
                 </div>
             </div>
         </div>
-
-        <br>
-
+    </div>
         <section id="equipoFooter">
             <br>
             <br>
@@ -379,7 +372,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                     <div class="carousel-inner">
                         <div class="item carousel-item active testimonialItem">
                             <div class="img-box">
-                                <img src="./assets/img/customer1.jpg" alt="Avatar de cliente">
+                                <img src="./assets/img/customer1.webp" alt="Avatar de cliente">
                             </div>
                             <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima omnis
                                 laudantium maxime amet eius saepe ducimus enim sequi maiores quae.</p>
@@ -387,7 +380,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                         </div>
                         <div class="item carousel-item testimonialItem">
                             <div class="img-box">
-                                <img src="./assets/img/customer2.jpg" alt="Avatar de cliente">
+                                <img src="./assets/img/customer2.webp" alt="Avatar de cliente">
                             </div>
                             <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Necessitatibus praesentium nam accusamus adipisci, aspernatur amet.</p>
@@ -395,7 +388,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                         </div>
                         <div class="item carousel-item testimonialItem">
                             <div class="img-box">
-                                <img src="./assets/img/customer3.jpg" alt="Avatar de cliente">
+                                <img src="./assets/img/customer3.webp" alt="Avatar de cliente">
                             </div>
                             <p class="testimonial">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
                                 voluptates aspernatur voluptas animi similique voluptatibus soluta. Commodi dignissimos
@@ -471,6 +464,16 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                             style="height: 100px"></textarea>
                         <label for="floatingTextarea2">Comentarios adicionales</label>
+                    </div>
+                    <br>
+                    <p>Confirma que es un ser humano?</p>
+                    <div class="custom-control custom-radio custom-control-inline">
+                     <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline1">Si</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                     <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                     <label class="custom-control-label" for="customRadioInline2">No</label>
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
@@ -603,55 +606,55 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
         crossorigin="anonymous"></script>
 
     <script>
-        imprimeServicios(JSON.parse(<?php echo $respuestaEndpointServicios ?>));
+        imprimeEquipo(JSON.parse(<?php echo $respuestaEndpointEquipo ?>));
 
-        function imprimeServicios(_datosEndpoint) {
+        function imprimeEquipo(_datosEndpoint) {
             let cantidadData = 0;
             _datosEndpoint.data.forEach(element => {
+                
+            });(element => {
                 if (element.activo) {
                     cantidadData++;
                 }
             });
-            const anchoColumnasXL = 12 / cantidadData;
-            const anchoColumnasMD = Math.round((12 / cantidadData) * 2);
-            const anchoColumnasSM = Math.round((12 / cantidadData) * 2 * 2);
-            const rowServices = document.getElementById('rowServices');
-            rowServices.innerHTML = '';
-            _datosEndpoint.data.forEach(element => {
-                if (element.activo) {
+
+            const anchoColumna = 12 /cantidadData;
+            const seccionEquipo = document.getElementById('seccionEquipo');
+            seccionEquipo.innerHTML = '';
+
+            
+            _datosEndpoint.data.forEach(element =>{
+               // if (element.activo) {
                     const columna = document.createElement('div');
-                    columna.classList.add('col-xl-' + anchoColumnasXL);
-                    columna.classList.add('col-md-' + anchoColumnasMD);
-                    columna.classList.add('col-sm-' + anchoColumnasSM);
-                    /* columna.classList.add('my-2'); */
+                    columna.classList.add('col-6');
+
+                    const equipoTitulo = document.createElement('h2');
+                    const equipoTexto = document.createElement('p'); 
+
+                    //equipoTitulo.innerHTML = '<h2 id="equipoTitulo">Nuestro equipo</h2>';
+                    //equipoTexto.innerHTML = '<p id="equipoTexto">En Energy And Water Spa nos dedicamos a crear ambientes gratos y confortables a través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos y electricidad, entre otros. Los miembros de nuestro equipo son: </p>';
+                    
                     const tarjeta = document.createElement('div');
-                    tarjeta.classList.add('card');//dentro de card, va img y div card-body
-                    const tarjetaBody = document.createElement('div');
-                    tarjetaBody.classList.add('card-body');
-                    const tarjetaTitle = document.createElement('h5');
-                    tarjetaTitle.classList.add('card-title');
-                    tarjetaTitle.classList.add('text-center');
+                    tarjeta.classList.add('card');
                     const tarjetaImagen = document.createElement('img');
                     tarjetaImagen.src = element.imagen;
                     tarjetaImagen.classList.add('card-img-top');
-                    const tarjetaText = document.createElement('p');
-                    tarjetaText.classList.add('text-center');
-                    const tarjetaFooter = document.createElement('div');
-                    tarjetaFooter.classList.add('card-footer');
-                    tarjetaFooter.classList.add('text-center');
-                    tarjetaTitle.innerText = element.nombre;
-                    tarjetaText.innerText = element.texto;
-                    tarjetaFooter.innerHTML = '<a href="#contacto"><button class= "btn btn-primary" onclick="cambiarServicio(`' + element.id + '`)">Contáctanos</button></a>';
+                    const tarjetaBody = document.createElement('div');
+                    tarjetaBody.classList.add('card-body');
+                    const textoTarjeta = document.createElement('p');
+                    textoTarjeta.classList.add('card-text');
+                    textoTarjeta.innerText = element.texto;
+                    columna.appendChild(equipoTexto);
+                    columna.appendChild(equipoTitulo);
                     tarjeta.appendChild(tarjetaImagen);
-                    tarjetaBody.appendChild(tarjetaTitle);
-                    tarjetaBody.appendChild(tarjetaText);
+                    tarjetaBody.appendChild(textoTarjeta);
                     tarjeta.appendChild(tarjetaBody);
-                    tarjetaBody.appendChild(tarjetaFooter);
                     columna.appendChild(tarjeta);
-                    rowServices.appendChild(columna);
-                }
-            });
+                    seccionEquipo.appendChild(columna);
+                    //seccionEquipo.appendChild(tarjeta);
         }
+    )};
+//}
 
         function cambiarServicio(serviceId) {
             // Scroll to the form section
@@ -670,7 +673,7 @@ $respuestaEndpointServicios = json_encode($respuestaEndpointServicios);
                     option.selected = false;
                 }
             });
-        }
+        } 
     </script>
 </body>
 
