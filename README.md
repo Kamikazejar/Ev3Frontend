@@ -1,6 +1,6 @@
 <h1>Evaluación 2 para la asignatura de Desarrollo Frontend de Ingeniería en informática, Instituto San Sebastián, 2024.</h1>
 
-<h2>Este proyecto nace con el propósito de presentar una mejora al sitio https://www.energyandwater.cl</h2>
+<h2>Este proyecto nace con el propósito de presentar una mejora al sitio https://www.energyandwater.cl y debe usarse de forma local.</h2>
 
 <p>Debe ser utilizado en conjunto a este repositorio https://github.com/LuzM-08/energy-and-water-t1 para acceder a los endpoints.
 
@@ -21,7 +21,7 @@ La función getEndpointByToken recibirá por parámetro el link al endpoint que 
 <h1>Project for evaluation 2 for the "Frontend development" course. Software Development, Instituto San Sebastían, 2024.</h1>
 <h2>This project is a proposal to improve the original website https://www.energyandwater.cl.</h2>
 
-<p>This repository is meant to work in tandem with the backend model developed in the following repository: https://github.com/LuzM-08/energy-and-water-t1 to access the endpoints.</p>
+<p>This repository is meant to work in tandem with the backend model developed in the following repository: https://github.com/LuzM-08/energy-and-water-t1 to access the endpoints. It's meant to be used locally.</p>
 
 <ul>
   <h3>Requirements:</h3>
