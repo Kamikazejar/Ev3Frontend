@@ -21,6 +21,12 @@ function getEndpointByToken($_endpoint, $_token)
 
 $respuestaEndpointEquipo = getEndpointByToken('http://localhost/energy-and-water-t1/v1/equipo/', 'ciisa-get');
 $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
+
+$respuestaEndpointHistoria = getEndpointByToken('http://localhost/energy-and-water-t1/v1/historia/', 'ciisa-get');
+$respuestaEndpointHistoria = json_encode($respuestaEndpointHistoria);
+
+$respuestaEndpointContacto = getEndpointByToken('http://localhost/energy-and-water-t1/v1/info_contacto/', 'ciisa-get');
+$respuestaEndpointContacto = json_decode($respuestaEndpointContacto);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,8 +47,8 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.webp" alt="Logo de la empresa Energy and Water" width="100px"
-                    height="100px" class="logo">
+                <img src="assets/img/logo.webp" alt="Logo de la empresa Energy and Water" width="100px" height="100px"
+                    class="logo">
                 <img src="assets/img/titulo.webp"></a>
             </a>
 
@@ -107,27 +113,15 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
     <section id="seccionHistoria">
         <div class="container mt-3">
             <div class="row">
-                <div class="col-md-6">
-                    <h2 class="mb-4">Historia</h2>
-                    <h3 class="text1">Creando ambientes gratos y confortables a través del mantenimiento</h3>
-                    <p> Bienvenido a Energy and Water SpA, empresa dedicada a la instalación y reparación de sistemas de
-                        ventilación, calefacción, electricidad y construcción. Contamos con un equipo de profesionales
-                        altamente cualificados y con amplia experiencia en el sector. Ofrecemos soluciones a medida para
-                        cada cliente, garantizando la calidad y la seguridad de nuestros servicios. Contacta con
-                        nosotros y solicita tu presupuesto sin compromiso. </p>
-                    <h3 class="text1">En qué punto nos encontramos</h3>
-                    <p>Somos una empresa fundada en 2018 con el objetivo de brindar servicios integrales de
-                        mantenimiento para hogares, oficinas, comercios e industrias. Nuestra misión es satisfacer las
-                        necesidades de nuestros clientes con eficiencia, rapidez y profesionalidad. Nuestra visión es
-                        ser la empresa referente en el mercado por nuestra excelencia y compromiso. Nuestros valores son
-                        la honestidad, la responsabilidad, el respeto y la innovación. </p>
-                </div>
+                <div class="col-md-6" id="contenidoHistoria">
 
+                </div>
                 <div class="col-md-6" id="imghistoria">
-                    <img src="assets\img\vilñacousinomacul.webp" class="img-fluid"
+                    <img src="assets/img/vilñacousinomacul.webp" class="img-fluid"
                         alt="Mantenimiento de lamparas en Cousiño Macul" id="Img1" width="75%">
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!--Sección Historia-->
@@ -261,81 +255,87 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
                 <div class="col-6">
                     <h2 id="equipoTitulo">Nuestro equipo</h2>
                     <br>
-                    <p id="equipoTexto">En <strong>Energy And Water Spa</strong> nos dedicamos a crear ambientes gratos y confortables a
+                    <p id="equipoTexto">En <strong>Energy And Water Spa</strong> nos dedicamos a crear ambientes gratos
+                        y confortables a
                         través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos
                         y electricidad, entre otros. Los miembros de nuestro equipo son:</p>
                 </div>
                 <div class="col-6">
-                <div class="card-group" style="width: 90%;">
-                    <div class="card" style="margin-right: 3%;">
-                        <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Mizraim Abello Avello"
-                            id="fotoMiembros">
-                        <div class="card-body">
-                            <p class="card-text">Mizraim Abello Avello</p>
+                    <div class="card-group" style="width: 90%;">
+                        <div class="card" style="margin-right: 3%;">
+                            <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Mizraim Abello Avello"
+                                id="fotoMiembros">
+                            <div class="card-body">
+                                <p class="card-text">Mizraim Abello Avello</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Marcelo Fuentes Orellana"
+                                id="fotoMiembros">
+                            <div class="card-body">
+                                <p class="card-text">Marcelo Fuentes Orellan</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="assets/img/foto-miembro.webp" class="card-img-top" alt="Marcelo Fuentes Orellana"
-                            id="fotoMiembros">
-                        <div class="card-body">
-                            <p class="card-text">Marcelo Fuentes Orellan</p>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
             <div class="container mt-3">
-            <div class="row" id="seccionValores">
-                <div class="col-6">
-                    <br>
-                    <h2 id="valoresEmp">Nuestros Valores</h2>
-                    <p> Compartimos una visión clara del objetivo, fomentamos un clima de confianza, colaboración y
-                        apoyo mutuo entre los integrantes del equipo.</p>
-                </div>
-                <div class="col-6">
-                    <img id="elServicio" src="assets\img\el-servicio-nos-mueve.webp" class="img-fluid"
-                        alt="El Servicio nos Mueve" id="Img1" width="90%">
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="container mt-3">
-        <div class="row" id="seccionLiderazgo">
-                <div class="col-6">
-                    <h2 style="text-align: left;">Liderazgo</h2>
-                    <br>
-                    <p><strong>Mizraim Abello</strong> es el fundador de Energy and Water Spa, es un líder colaborativo
-                        que se desempeña
-                        en el ámbito laboral, específicamente en el sector de la climatización y electricidad. Practica
-                        un liderazgo democrático...
-                        <button type="button" onclick="mostrar()" id="leerMas">Leer más</button>
-                    </p>
-                    <div id="masTexto" style="display: none">
-                        Es decir, involucra al equipo de trabajo en la toma de decisiones y valora sus opiniones y
-                        sugerencias. Sus principales habilidades como líder son la resolución de problemas, la
-                        comunicación efectiva, el pensamiento crítico,
-                        la capacidad de coordinación y gestión. Algunos de los logros más destacados son haber
-                        participado en la acreditación
-                        de los centros de salud de la municipalidad de San Joaquín, reparación del equipo de
-                        climatización para el museo
-                        de la Universidad de los Andes y haber realizado reparaciones y cambios de grupos electrógenos
-                        que son críticos para el
-                        funcionamiento de los edificios. Uno de los desafíos que enfrentó como líder fue adaptarse a las
-                        nuevas normativas sanitarias
-                        por la pandemia y garantizar la seguridad del equipo y los clientes. Lo logró implementando
-                        protocolos de prevención y
-                        capacitando al personal. Su objetivo como líder es darles continuidad operacional a los clientes
-                        y mejorar constantemente
-                        los procesos de mantenimiento y calidad.
+                <div class="row" id="seccionValores">
+                    <div class="col-6">
+                        <br>
+                        <h2 id="valoresEmp">Nuestros Valores</h2>
+                        <p> Compartimos una visión clara del objetivo, fomentamos un clima de confianza, colaboración y
+                            apoyo mutuo entre los integrantes del equipo.</p>
+                    </div>
+                    <div class="col-6">
+                        <img id="elServicio" src="assets\img\el-servicio-nos-mueve.webp" class="img-fluid"
+                            alt="El Servicio nos Mueve" id="Img1" width="90%">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <img id="mantEdificios" class="thumbnail" src="assets\img\mantenimiento-para-edificios.webp"
-                        alt="Mantenimiento para Edificios" width="90%">
+            </div>
+            <br>
+            <div class="container mt-3">
+                <div class="row" id="seccionLiderazgo">
+                    <div class="col-6">
+                        <h2 style="text-align: left;">Liderazgo</h2>
+                        <br>
+                        <p><strong>Mizraim Abello</strong> es el fundador de Energy and Water Spa, es un líder
+                            colaborativo
+                            que se desempeña
+                            en el ámbito laboral, específicamente en el sector de la climatización y electricidad.
+                            Practica
+                            un liderazgo democrático...
+                            <button type="button" onclick="mostrar()" id="leerMas">Leer más</button>
+                        </p>
+                        <div id="masTexto" style="display: none">
+                            Es decir, involucra al equipo de trabajo en la toma de decisiones y valora sus opiniones y
+                            sugerencias. Sus principales habilidades como líder son la resolución de problemas, la
+                            comunicación efectiva, el pensamiento crítico,
+                            la capacidad de coordinación y gestión. Algunos de los logros más destacados son haber
+                            participado en la acreditación
+                            de los centros de salud de la municipalidad de San Joaquín, reparación del equipo de
+                            climatización para el museo
+                            de la Universidad de los Andes y haber realizado reparaciones y cambios de grupos
+                            electrógenos
+                            que son críticos para el
+                            funcionamiento de los edificios. Uno de los desafíos que enfrentó como líder fue adaptarse a
+                            las
+                            nuevas normativas sanitarias
+                            por la pandemia y garantizar la seguridad del equipo y los clientes. Lo logró implementando
+                            protocolos de prevención y
+                            capacitando al personal. Su objetivo como líder es darles continuidad operacional a los
+                            clientes
+                            y mejorar constantemente
+                            los procesos de mantenimiento y calidad.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img id="mantEdificios" class="thumbnail" src="assets\img\mantenimiento-para-edificios.webp"
+                            alt="Mantenimiento para Edificios" width="90%">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
         <section id="equipoFooter">
             <br>
             <br>
@@ -468,12 +468,14 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
                     <br>
                     <p>Confirma que es un ser humano?</p>
                     <div class="custom-control custom-radio custom-control-inline">
-                     <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                    <label class="custom-control-label" for="customRadioInline1">Si</label>
+                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                            class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">Si</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                     <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                     <label class="custom-control-label" for="customRadioInline2">No</label>
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                            class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">No</label>
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
@@ -570,31 +572,8 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
                     <!-- Footer servicios -->
 
                     <!-- Footer contacto   -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contenedorContacto">
                         <h6 class="text-uppercase fw-bold">Información de contacto</h6>
-                        <p>
-                            <i class="fas fa-home"></i>Manquehue Sur 520, oficina 205, Las Condes
-                        </p>
-
-                        <p>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:contacto@energyandwater.cl" target="_blank">contacto@energyandwater.cl</a>
-                        </p>
-                        <p>
-                            <i class="fas fa-phone"></i>+ 56 2 32569798
-                        </p>
-
-                        <p>
-                            <i class="fas fa-print"></i>
-                            <a
-                                href="https://api.whatsapp.com/send/?phone=%2B56930835203&text&type=phone_number&app_absent=0"><img
-                                    src="./assets/img/logo-whatsapp-png-46042.png" alt="" id="whatsapp-logo"
-                                    height="25px"></a>
-                            <a
-                                href="https://api.whatsapp.com/send/?phone=%2B56930835203&text&type=phone_number&app_absent=0">Whatsapp</a>
-                        </p>
-
                     </div>
                     <!-- Footer contacto -->
         </section>
@@ -611,50 +590,51 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
         function imprimeEquipo(_datosEndpoint) {
             let cantidadData = 0;
             _datosEndpoint.data.forEach(element => {
-                
-            });(element => {
+
+            }); (element => {
                 if (element.activo) {
                     cantidadData++;
                 }
             });
 
-            const anchoColumna = 12 /cantidadData;
+            const anchoColumna = 12 / cantidadData;
             const seccionEquipo = document.getElementById('seccionEquipo');
             seccionEquipo.innerHTML = '';
 
-            
-            _datosEndpoint.data.forEach(element =>{
-               // if (element.activo) {
-                    const columna = document.createElement('div');
-                    columna.classList.add('col-6');
 
-                    const equipoTitulo = document.createElement('h2');
-                    const equipoTexto = document.createElement('p'); 
+            _datosEndpoint.data.forEach(element => {
+                // if (element.activo) {
+                const columna = document.createElement('div');
+                columna.classList.add('col-6');
 
-                    //equipoTitulo.innerHTML = '<h2 id="equipoTitulo">Nuestro equipo</h2>';
-                    //equipoTexto.innerHTML = '<p id="equipoTexto">En Energy And Water Spa nos dedicamos a crear ambientes gratos y confortables a través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos y electricidad, entre otros. Los miembros de nuestro equipo son: </p>';
-                    
-                    const tarjeta = document.createElement('div');
-                    tarjeta.classList.add('card');
-                    const tarjetaImagen = document.createElement('img');
-                    tarjetaImagen.src = element.imagen;
-                    tarjetaImagen.classList.add('card-img-top');
-                    const tarjetaBody = document.createElement('div');
-                    tarjetaBody.classList.add('card-body');
-                    const textoTarjeta = document.createElement('p');
-                    textoTarjeta.classList.add('card-text');
-                    textoTarjeta.innerText = element.texto;
-                    columna.appendChild(equipoTexto);
-                    columna.appendChild(equipoTitulo);
-                    tarjeta.appendChild(tarjetaImagen);
-                    tarjetaBody.appendChild(textoTarjeta);
-                    tarjeta.appendChild(tarjetaBody);
-                    columna.appendChild(tarjeta);
-                    seccionEquipo.appendChild(columna);
-                    //seccionEquipo.appendChild(tarjeta);
-        }
-    )};
-//}
+                const equipoTitulo = document.createElement('h2');
+                const equipoTexto = document.createElement('p');
+
+                //equipoTitulo.innerHTML = '<h2 id="equipoTitulo">Nuestro equipo</h2>';
+                //equipoTexto.innerHTML = '<p id="equipoTexto">En Energy And Water Spa nos dedicamos a crear ambientes gratos y confortables a través del mantenimiento para calderas, aire acondicionado, salas de bombas, grupos electrógenos y electricidad, entre otros. Los miembros de nuestro equipo son: </p>';
+
+                const tarjeta = document.createElement('div');
+                tarjeta.classList.add('card');
+                const tarjetaImagen = document.createElement('img');
+                tarjetaImagen.src = element.imagen;
+                tarjetaImagen.classList.add('card-img-top');
+                const tarjetaBody = document.createElement('div');
+                tarjetaBody.classList.add('card-body');
+                const textoTarjeta = document.createElement('p');
+                textoTarjeta.classList.add('card-text');
+                textoTarjeta.innerText = element.texto;
+                columna.appendChild(equipoTexto);
+                columna.appendChild(equipoTitulo);
+                tarjeta.appendChild(tarjetaImagen);
+                tarjetaBody.appendChild(textoTarjeta);
+                tarjeta.appendChild(tarjetaBody);
+                columna.appendChild(tarjeta);
+                seccionEquipo.appendChild(columna);
+                //seccionEquipo.appendChild(tarjeta);
+            }
+            )
+        };
+        //}
 
         function cambiarServicio(serviceId) {
             // Scroll to the form section
@@ -673,7 +653,47 @@ $respuestaEndpointEquipo = json_encode($respuestaEndpointEquipo);
                     option.selected = false;
                 }
             });
-        } 
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            imprimeHistoria(JSON.parse(<?php echo $respuestaEndpointHistoria; ?>));
+        });
+
+        function imprimeHistoria(_datosEndpoint) {
+            const contenidoHistoria = document.getElementById('contenidoHistoria');
+
+            _datosEndpoint.data.forEach(historia => {
+                if (historia.activo) {
+                    const titulo = document.createElement('h3');
+                    titulo.classList.add('text1');
+                    titulo.innerText = historia.tipo;
+
+                    const parrafo = document.createElement('p');
+                    parrafo.innerText = historia.texto;
+
+                    contenidoHistoria.appendChild(titulo);
+                    contenidoHistoria.appendChild(parrafo);
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Simular la respuesta del endpoint de contacto para fines de ejemplo
+            const respuestaEndpointContacto = <?php echo json_encode($respuestaEndpointContacto); ?>;
+
+            imprimeInfoContacto(respuestaEndpointContacto);
+        });
+        function imprimeInfoContacto(datosContacto) {
+            const contenedorContacto = document.getElementById('contenedorContacto');
+
+            // Itera sobre los datos obtenidos del endpoint
+            datosContacto.data.forEach(item => {
+                // Crea un párrafo para cada propiedad del contacto
+                const parrafo = document.createElement('p');
+                parrafo.innerHTML = `<i class="${item.icono}"></i> ${item.texto}`;
+
+                // Agrega el párrafo al contenedor
+                contenedorContacto.appendChild(parrafo);
+            });
+        }
     </script>
 </body>
 
